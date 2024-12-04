@@ -23,6 +23,7 @@ Surveillance Card is a custom component for lovelace to be used as a panel for v
 | focus_motion | boolean | Switch to camera when motion detected | true
 | camera_view | string | “live” will show the live view if  the `stream` integration is enabled. | ""
 | thumb_position | string | Position of the thumbnails (left, right, top, bottom, none) | left
+| muted | boolean | Enable to mute the audio from the cameras | false
 
 ### Camera Parameters
 

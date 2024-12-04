@@ -54,6 +54,7 @@ class SurveillanceCard extends LitElement {
         <ha-camera-stream
           .hass=${this.hass}
           .stateObj="${cameraObj}"
+          ${this.muted ? "muted" : ""}
         ></ha-camera-stream>
       `;
     }
@@ -69,6 +70,7 @@ class SurveillanceCard extends LitElement {
       focusOnMotion: { type: Boolean },
       thumbInterval: { type: Number },
       thumbPosition: { type: String },
+      muted: { type: Boolean },
       updateInterval: { type: Number },
       recordingDuration: { type: Number },
       showCaptureButtons: { type: Boolean },
@@ -107,6 +109,7 @@ class SurveillanceCard extends LitElement {
     this.showCaptureButtons = config.show_capture_buttons !== false;
     this.liveStream = config.camera_view === "live";
     this.thumbPosition = config.thumb_position || "left";
+    this.muted = config.muted === true;
 
     // There must be better way to tell if HA front end running from app or browser
     // Confirmed working on iOS, should be verified on Android app
